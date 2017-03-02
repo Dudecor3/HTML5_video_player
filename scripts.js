@@ -16,12 +16,23 @@ toggle.addEventListener('click', togglePlay);
 
 
 function togglePlay() {
-    const method = video.paused ? 'play' : 'pause';
+    var method = '';
+    if (video.paused === true) {
+        method = 'play'
+    } else if (video.paused === false) {
+        method = 'pause';
+    }
     video[method]();
+    console.log(method);
 }
 
 function updateButton() {
-    const icon = this.paused ? '►' : '❚❚';
+    var icon = '';
+    if (this.paused === true) {
+        icon = '►'
+    } else if (this.paused === false) {
+        icon = '❚❚'
+    }
     console.log(icon);
     toggle.textContent = icon;
 }
